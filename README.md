@@ -1,5 +1,7 @@
 # promise-throttle
 
+## A fork of this code accessible via npm is available at https://github.com/tiagostutz/fetch-throttle
+
 This is a Javascript module that wraps a function to limit the rate at
 which that function is called. Although it can wrap any function, it
 is primarily intended for use with `fetch()` to call rate-limited web
@@ -25,7 +27,7 @@ argument, where completion is determined by converting the returned
 value to a `Promise` (using `Promise.resolve()`) and waiting for it to
 settle.
 
-The strategy of using completion time does requirethat every `Promise`
+The strategy of using completion time does require that every `Promise`
 returned by the wrapped function should eventually resolve or reject.
 "Zombie" `Promise` instances that never settle will eventually clog
 the throttle queue. This can generally be addressed by adding a
